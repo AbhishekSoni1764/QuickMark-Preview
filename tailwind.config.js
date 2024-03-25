@@ -13,6 +13,15 @@ export default {
       lg: '976px',
       xl: '1440px',
     },
+    colors: {
+      grey: {
+        200: "#595555",
+        300: "#3d3939",
+        700: "#292525",
+      },
+      white: "#a6a5a2",
+      black: "#000000"
+    }
   },
   plugins: [
     require('@tailwindcss/typography'),
