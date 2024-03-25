@@ -5,11 +5,11 @@ import Preview from './components/Preview'
 import { useState } from 'react'
 
 function App() {
-  const [markdown, setMarkdown] = useState("# Enter Text ...")
+  const [markdown, setMarkdown] = useState("")
 
   return (
     <>
-      <div className="bg-grey-700 text-white">
+      <div className="bg-grey-700 h-screen text-white">
         <Navbar />
         <div className="flex flex-col lg:flex-row">
           <Markdown markdown={markdown} setMarkdown={setMarkdown} />

@@ -42,6 +42,7 @@ export default function Markdown({ markdown, setMarkdown }) {
                 ref={textAreaRef}
                 value={markdown}
                 onChange={(e) => setMarkdown(e.target.value)}
+                placeholder="Text Here ..."
             />
         </div>
     );
