@@ -27,7 +27,7 @@ export default function Markdown({ markdown, setMarkdown }) {
             <div className="w-full h-8 lg:h-10 border-2 flex items-center">
                 <Button value="****" handleInsertText={handleInsertText} imgUrl={'https://img.icons8.com/ios-filled/50/bold.png'} />
                 <Button value='**' handleInsertText={handleInsertText} imgUrl={'https://img.icons8.com/ios-filled/50/italic.png'} />
-                <Button value='<ul></ul>' handleInsertText={handleInsertText} imgUrl={'https://img.icons8.com/ios-filled/50/underline.png'} />
+                <Button value='<u></u>' handleInsertText={handleInsertText} imgUrl={'https://img.icons8.com/ios-filled/50/underline.png'} />
                 <Button value='- ' handleInsertText={handleInsertText} imgUrl={'https://img.icons8.com/puffy-filled/32/list.png'} />
                 <Button value='1. ' handleInsertText={handleInsertText} imgUrl={'https://img.icons8.com/ios-filled/50/numbered-list.png'} />
                 <Button value='- [ ] ' handleInsertText={handleInsertText} imgUrl={'https://img.icons8.com/ios-filled/50/todo-list.png'} />
