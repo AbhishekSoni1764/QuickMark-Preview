@@ -20,7 +20,10 @@ export default {
         700: "#292525",
       },
       white: "#a6a5a2",
-      black: "#000000"
+      black: "#000000",
+      blue: {
+        600: "#8ab4dd"
+      }
     }
   },
   plugins: [
