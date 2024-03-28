@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     const showPreview = (e) => {
-      if (e.shiftKey && e.key === "Enter") {
+      if (e.shiftKey || e.key === "Enter") {
         e.preventDefault();
         setIsPreview(prevValue => !prevValue);
       }
