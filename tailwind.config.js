@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 
 export default {
@@ -22,7 +23,10 @@ export default {
         700: "#292525",
         900: "#17171f",
       },
-      white: "#a6a5a2",
+      white: {
+        100: "#a6a5a2",
+        200: "#FFFFFF",
+      },
       black: "#000000",
       blue: {
         600: "#8ab4dd"

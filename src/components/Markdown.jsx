@@ -1,8 +1,9 @@
-import { useRef, useState } from "react";
+/* eslint-disable react/prop-types */
+import { useRef } from "react";
 import Button from "./Button"
 import Dropdown from "./Dropdown"
 
-export default function Markdown({ markdown, setMarkdown, isPreview, isVert, handleOrientation }) {
+export default function Markdown({ markdown, setMarkdown, isVert, handleOrientation }) {
     const textAreaRef = useRef(null);
 
     const handleInsertText = (value) => {
@@ -23,7 +24,7 @@ export default function Markdown({ markdown, setMarkdown, isPreview, isVert, han
     };
 
     return (
-        <div className={isVert ? "w-[-webkit-fill-available] h-[50%] border-2 border-grey-200 m-5 flex flex-col rounded-md bg-grey-300" : "w-[-webkit-fill-available] lg:w-1/2 h-fit lg:h-screen border-2 border-grey-200 m-5 flex flex-col rounded-md bg-grey-300"}>
+        <div className={isVert ? "w-[-webkit-fill-available] h-[50%] border-2 border-grey-200 m-5 flex flex-col rounded-md bg-grey-300" : "w-[-webkit-fill-available] lg:w-1/2 h-[40%] lg:h-screen border-2 border-grey-200 m-5 flex flex-col rounded-md bg-grey-300"}>
             <div className="w-full h-8 lg:h-10 border-2 border-grey-700 flex items-center">
                 <Button value="**Bold Text**" handleInsertText={handleInsertText} imgUrl={'https://img.icons8.com/ios-filled/50/bold.png'} />
                 <Button value='*Italicized Text*' handleInsertText={handleInsertText} imgUrl={'https://img.icons8.com/ios-filled/50/italic.png'} />
@@ -36,18 +37,17 @@ export default function Markdown({ markdown, setMarkdown, isPreview, isVert, han
                 <Button value='> Quoted Text' handleInsertText={handleInsertText} imgUrl={'https://img.icons8.com/ios-filled/50/quote-right.png'} />
                 <Button value='![Image](url) ' handleInsertText={handleInsertText} imgUrl={'https://img.icons8.com/sf-regular-filled/48/image.png'} />
                 <Dropdown handleInsertText={handleInsertText} />
-                <button className='text-bold hover:shadow-inner hover:shadow-grey-700 border-2 border-grey-300 w-14 h-full flex items-center justify-center' onClick={handleOrientation}>
-                    <img className="h-5 w-5" src={isVert ? 'https://img.icons8.com/ios-filled/50/split-horizontal.png' : "https://img.icons8.com/ios-filled/50/split-vertical.png"} alt="lgos" />
+                <button className='text-bold hover:shadow-inner hover:shadow-grey-700 border-2 border-grey-300 w-14 h-full hidden lg:flex items-center justify-center ' onClick={handleOrientation}>
+                    <img className="h-5 w-5 invert" src={isVert ? 'https://img.icons8.com/ios-filled/50/split-horizontal.png' : "https://img.icons8.com/ios-filled/50/split-vertical.png"} alt="lgos" />
                 </button>
             </div>
             <textarea
-                className={isVert ? "w-[-webkit-fill-available] outline-none bg-grey-250 text-white h-[100%] p-5" : "w-[-webkit-fill-available] outline-none bg-grey-250 text-white h-fit lg:h-screen p-5"}
+                className={isVert ? "w-[-webkit-fill-available] outline-none bg-grey-250 text-white h-[100%] p-5" : "w-[-webkit-fill-available] outline-none bg-grey-250 text-white h-full lg:h-screen p-5"}
                 ref={textAreaRef}
                 value={markdown}
                 onChange={(e) => setMarkdown(e.target.value)}
                 placeholder="Text Here ..."
             />
-            {!isPreview && <h3 className="p-5 bg-grey-250">Shift + Enter to Show Preview</h3>}
         </div>
     );
 }
